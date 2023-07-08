@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    nav{
+        height: 80px;
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 50px 0px 100px;
+    }
+    nav .logo{
+        color: #ffff;
+        font-weight: 600;
+        font-size: 34px;
+    }
+    nav ul{
+        display: flex;
+        list-style: none;
+    }
+    nav ul li{
+        margin: 0px 10px;
+    }
+    nav ul li a{
+        text-decoration: none;
+        color: #ffff;
+        padding: 8px 10px;
+        transition: all 0.3s ease;
+        
+    }
+    nav ul li a:hover,
+    nav ul li a.active{
+        background-color: #ffff;
+        color: #000;
+        border-radius: 3px;
+    }
+    nav .hamburger-menu i{
+        color: #ffff;
+        display: none;
+        font-size: 22px;
+        cursor: pointer;
+    }
+@media (max-width: 940px){
+    nav ul{
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background-color: #111;
+        height: 100vh;
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    nav ul li{
+        margin: 40px 0px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    nav .hamburger-menu i{
+        color: #ffff;
+        display: block;
+        font-size: 22px;
+        cursor: pointer;
+        
+    }
+    #click:checked ~ ul{
+        left: 0;
+        transition: all 1s ease;
+    }
+    #click:checked ~ .hamburger-menu i:before{
+        content: "\f00d";
+    }
+}
+
+
+</style>
+<body>
+    <nav>
+        <div class="logo">
+            Navbar
+        </div>
+        <input style="display: none;" type="checkbox" name="" id="click">
+        <label for="click" class="hamburger-menu"><i class="fa-solid fa-bars"></i></label>
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Others</a></li>
+        </ul>
+    </nav>
+    
+</body>
+</html>
